@@ -10,10 +10,11 @@
 namespace Application;
 
 return array(
-    'router' => require 'router.config.php',
-    'service_manager' => require 'service-manager.config.php',
-    'translator' => require 'translator.config.php',
-    'controllers' => require 'controllers.config.php',
-    'view_manager' => require 'view-manager.config.php',
-    'console' => require 'console.config.php',
+    'abstract_factories' => array(
+        'Zend\Cache\Service\StorageCacheAbstractServiceFactory',
+        'Zend\Log\LoggerAbstractServiceFactory',
+    ),
+    'factories' => array(
+        'translator' => 'Zend\Mvc\Service\TranslatorServiceFactory',
+    ),
 );

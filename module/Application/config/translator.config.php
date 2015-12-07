@@ -10,10 +10,12 @@
 namespace Application;
 
 return array(
-    'router' => require 'router.config.php',
-    'service_manager' => require 'service-manager.config.php',
-    'translator' => require 'translator.config.php',
-    'controllers' => require 'controllers.config.php',
-    'view_manager' => require 'view-manager.config.php',
-    'console' => require 'console.config.php',
+    'locale' => 'en_US',
+    'translation_file_patterns' => array(
+        array(
+            'type'     => 'gettext',
+            'base_dir' => __DIR__ . '/../language',
+            'pattern'  => '%s.mo',
+        ),
+    ),
 );

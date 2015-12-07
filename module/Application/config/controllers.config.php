@@ -10,10 +10,7 @@
 namespace Application;
 
 return array(
-    'router' => require 'router.config.php',
-    'service_manager' => require 'service-manager.config.php',
-    'translator' => require 'translator.config.php',
-    'controllers' => require 'controllers.config.php',
-    'view_manager' => require 'view-manager.config.php',
-    'console' => require 'console.config.php',
+    'invokables' => array(
+        'Application\Controller\Index' => Controller\IndexController::class
+    ),
 );
